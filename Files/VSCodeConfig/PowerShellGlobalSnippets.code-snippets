@@ -1,0 +1,238 @@
+{
+	// FCII workspace snippets Template
+	// Version 001 Klaus Bilger 10.01.2020
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+		"Do...until loop": 
+		{
+			"prefix": "snip_do",
+			"body": [
+				"do {",
+				"\t$0",
+				"} until (${$variable});"
+			],
+			"description": "Do...until loop"
+		},
+			
+		"Else statement": {
+			"prefix": "snip_else",
+			"body": [
+				"else {",
+				"\t$0",
+				"}"
+			],
+			"description": "Else statement"
+		},
+			
+		"ElseIf statement": {
+			"prefix": "elseif",
+			"body": [
+				"elseif (${$variable}) {",
+				"\t$0",
+				"}"
+			],
+			"description": "Elseif statement"
+		},
+			
+		"Foreach statement": {
+			"prefix": "snip_foreach",
+			"body": [
+				"foreach (${$item} in ${$collection}) {",
+				"\t$0",
+				"}"
+			],
+			"description": "Foreach statement"
+		},
+			
+		"For loop": {
+			"prefix": "snip_for",
+			"body": [
+				"for (${$i} = 0; ${$i} -lt ${$length}; ${$i}++) {",
+				"\t$0",
+				"}"
+			],
+			"description": "For loop"
+		},
+			
+		"If statement": {
+			"prefix": "snip_if",
+			"body": [
+				"if (${$variable}) {",
+				"\t$0",
+				"}"
+			],
+			"description": "If statement"
+		},
+			
+		"Reverse for loop": {
+			"prefix": "snip_forr",
+			"body": [
+				"for (${$i} = ${$length} - 1; ${$i} -ge 0; ${$i}--) {",
+				"\t$0",
+				"}"
+			],
+			"description": "Reverse for loop"
+		},
+			
+		"Switch statement": {
+			"prefix": "snip_switch",
+			"body": [
+				"switch (${$variable}) {",
+				"\t${condition} { ${action}; break }",
+				"\tDefault {}",
+				"}"
+			],
+			"description": "Switch statement"
+		},
+			
+		
+		"Try catch finally": {
+			"prefix": "snip_trycf",
+			"body": [
+				"try {",
+				"\t${_}",
+				"}",
+				"catch [${System.Exception}] {",
+				"\t# Exception is stored in the automatic variable $_",
+				"\t$0",
+				"}",
+				"finally {",
+				"\t$1",
+				"}"        ],
+			"description": "Try catch finally"
+		},
+			
+		"Function advanced": {
+			"prefix": "snip_funcadv",
+			"body": [
+				"<#",
+				".SYNOPSIS",
+				"\tShort description",
+				".DESCRIPTION",
+				"\tLong description",
+				".EXAMPLE",
+				"\tExample of how to use this cmdlet",
+				".EXAMPLE",
+				"\tAnother example of how to use this cmdlet",
+				"#>",
+				"function ${verb}-${noun} {",
+				"\t[CmdletBinding()]",
+				"\t[OutputType([${int}])]",
+				"\tparam(",
+				"\t\t[Parameter(Mandatory=$true)]",
+				"\t\t[${string}]",
+				"\t\t${Param1}",
+				"\t)",
+				"\t",
+				"\tbegin {",
+				"\t}",
+				"\t",
+				"\tprocess {",
+				"\t\t$0",
+				"\t}",
+				"\t",
+				"\tend {",
+				"\t}",
+				"}"
+			],
+			"description": "Advanced function"
+		},
+			
+		"Help": {
+			"prefix": "snip_help",
+			"body": [
+				"<#",
+				".SYNOPSIS",
+				"\tShort description",
+				".DESCRIPTION",
+				"\tLong description",
+				".PARAMETER Path",
+				"\tSpecifies a path to one or more locations.",
+				".PARAMETER LiteralPath",
+				"\tSpecifies a path to one or more locations. Unlike Path, the value of LiteralPath is used exactly as it",
+				"\tis typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose",
+				"\tit in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any",
+				"\tcharacters as escape sequences.",
+				".PARAMETER InputObject",
+				"\tSpecifies the object to be processed.  You can also pipe the objects to this command.",
+				".EXAMPLE",
+				"\tC:\\PS>",
+				"\tExample of how to use this cmdlet",
+				".EXAMPLE",
+				"\tC:\\PS>",
+				"\tAnother example of how to use this cmdlet",
+				".INPUTS",
+				"\tInputs to this cmdlet (if any)",
+				".OUTPUTS",
+				"\tOutput from this cmdlet (if any)",
+				".NOTES",
+				"\tGeneral notes",
+				".COMPONENT",
+				"\tThe component this cmdlet belongs to",
+				".ROLE",
+				"\tThe role this cmdlet belongs to",
+				".FUNCTIONALITY",
+				"\tThe functionality that best describes this cmdlet",
+				"#>"
+			],
+			"description": "Help comment block"
+		}
+
+		"fn_Write-Log": 
+		{
+			"prefix": "fn_Write-Log",
+			"body": [
+					"function Write-Log "
+				"\t{"
+				"\t\t[CmdletBinding()]"
+				"\t\tparam("
+				"\t\t\t[switch] $$Debug,"
+				"\t\t\t[switch] $$Start,"
+				"\t\t\t[switch] $$Error, "
+				"\t\t\t[switch] $$Trap,"
+				"\t\t\t[switch] $$Warn,"
+				"\t\t\t[switch] $$FatalError,"
+				"\t\t\t[string] $$local:MESSAGE"
+				"\t\t)"
+				"\t\t$local:TIMESTAMP = Get-Date -f 'yyyy-MM-dd HH:mm:ss'"
+				"\t\t[string] $$local:STATUS = 'INFO'"
+				"\t\tif($$Error) {$$local:STATUS = 'ERROR'}"
+				"\t\telseif($$Start) {$$local:STATUS = 'START' }"
+				"\t\telseif($$Warn) {$$local:STATUS = 'WARN'}"
+				"\t\telseif($$Trap) {$$local:STATUS = 'TRAP'}"
+				"\t\telseif($$Debug) {$$local:STATUS = 'DEBUG'}"
+				"\t\telseif($$FatalError) {$$local:STATUS = 'FATALERROR'}"
+				"\t\t$local:LOGLINE = ('{0} [ {1} ] => {2}' -f $$local:TIMESTAMP, $$local:STATUS, $$local:MESSAGE)"
+				"\t\tif($$Debug)"
+				"\t\t{if($$global:Debug -eq 1) {$$global:Trace += '$$local:LOGLINE `r`n'}}"
+				"\t\telse "
+				"\t\t{$$global:Trace += '$$local:LOGLINE `r`n' }"
+
+				"\t\tif($$FatalError)"
+				"\t\t{"
+				"\t\t\tWrite-log 'Exit code => $$global:ErrorState'"
+				"\t\t\texit 1 "
+				"\t\t}"
+				"\t}"
+				],
+			"description": "function Write Log"
+		}
+	
+		"SMDefaultComputer": 
+		{
+			"prefix": "fn_SMDefaultComputer",
+			"body": [
+					"[string]$SMDefaultComputer = '%DefaultSMServer%'"
+					"If((Get-Module SMlets) -eq $null){ Import-Module 'C:\Program Files\Common Files\SMLets\SMlets.psd1'}"
+				],
+			"description": "SMDefaultComputer Entwicklung"
+		}
+}

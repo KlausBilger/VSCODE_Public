@@ -1,0 +1,58 @@
+{
+    // "powershell.debugging.createTemporaryIntegratedConsole": true
+    "[powershell]": {
+        "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "breadcrumbs.enabled": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.parameterHints.enabled": true,
+    "editor.quickSuggestionsDelay": 10,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.suggest.localityBonus": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.tabCompletion": "on",
+    "editor.wordBasedSuggestions": true,
+    "enableTelemetry": false,
+    "files.autoGuessEncoding": true,   // For Umlaute
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "files.encoding": "utf8bom", // For Umlaute
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "mssql.copyIncludeHeaders": true,
+    "mssql.saveAsCsv.lineSeparator": ",",
+    "peacock.affectStatusBar": false,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,													 
+    "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.scrollback": 5000,
+   
+    "update.enableWindowsBackgroundUpdates": false,
+    "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.sideBar.location": "left",
+
+        // Controls if quick suggestions should show up while typing
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        },
+        "gitlens.gitCommands.skipConfirmations": [
+            "fetch:command",
+            "stash-push:command",
+            "switch:command",
+            "push:command"
+        ],
+        "peacock.affectTabActiveBorder": true,
+        "peacock.affectActivityBar": false,
+        "peacock.affectAccentBorders": true,
+        "explorer.confirmDragAndDrop": false,
+        "explorer.confirmDelete": false
+        
+    }
