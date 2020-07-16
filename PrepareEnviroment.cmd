@@ -28,6 +28,7 @@ ECHO  this may take a few seconds...
 ECHO ================================================
 robocopy .\Files\PSConfig  %USERPROFILE%\Documents\WindowsPowerShell *.*  /E /R:5 /W:5 /NP /NJH /NJS /NS /NC /NFL /NDL  >nul
 robocopy .\Files\VSCodeConfig %USERPROFILE%\AppData\Roaming\Code\User *.*  /E /R:5 /W:5 /NP /NJH /NJS /NS /NC /NFL /NDL >nul
+robocopy .\Files\snippets %USERPROFILE%\AppData\Roaming\Code\User\snippets *.*  /E /R:5 /W:5 /NP /NJH /NJS /NS /NC /NFL /NDL >nul
 ECHO  starting to copy the mssql tool.
 ECHO  this may take a few seconds... 
 ECHO ================================================
